@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFF0</color> //#add8e6
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#B04A34</color>  // 176.41.36 Theme color#B04A34  #B02924
+    <color name="color_icon">#B04A34</color>
+    <color name="tabUnSelectedIconColor">#C8C8C8</color>
+</resources>

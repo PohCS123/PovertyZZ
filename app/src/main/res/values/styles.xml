@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"> <!--Team.AppCompat set global theme for entire app-->
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>  <!--//mainly for app bar-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>  <!--// for status bar-->
+        <item name="colorAccent">@color/colorAccent</item> <!--//for some view-->
+        <item name="drawerArrowStyle">@style/DrawerIcon</item>  // style apply for drawer menu
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/color_icon</item>
+    </style>
+
+    //Style for Text in the top bar
+    <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/color_icon</item>
+    </style>
+
+
+
+    <!--<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />  //tool bar implements this theme style
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" /> -->
+
+    <!-- The default font for RecyclerView items is too small.
+The margin is a simple delimiter between the words. -->
+    <style name="word_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:background">@android:color/holo_orange_light</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- The default font for RecyclerView items is too small.
+        The margin is a simple delimiter between the words. -->
+    <style name="user_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textAppearance">
+            @android:style/TextAppearance.Large
+        </item>
+    </style>
+
+</resources>
