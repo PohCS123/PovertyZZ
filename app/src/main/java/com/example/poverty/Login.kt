@@ -14,9 +14,19 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 import org.json.JSONArray
 import org.json.JSONObject
+import android.R.id.edit
+import android.content.SharedPreferences
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.content.Context
+
+
+
+
 
 class Login : AppCompatActivity() {
-
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -57,6 +67,18 @@ class Login : AppCompatActivity() {
                             jsonUser.getString("email"),
                             jsonUser.getString("password"))
 
+                        val sharedPref : SharedPreferences = getSharedPreferences("PREF", Context.MODE_PRIVATE)
+                        val editor = sharedPref.edit()
+                        editor.putString("PREF", jsonUser.getString("name"))
+                        editor.apply()
+                        val sharedPref2 : SharedPreferences = getSharedPreferences("PREF2", Context.MODE_PRIVATE)
+                        val editor2 = sharedPref2.edit()
+                        editor2.putString("PREF2", jsonUser.getString("email"))
+                        editor2.apply()
+                        val sharedPref3 : SharedPreferences = getSharedPreferences("PREF3", Context.MODE_PRIVATE)
+                        val editor3 = sharedPref3.edit()
+                        editor3.putString("PREF3", jsonUser.getString("password"))
+                        editor3.apply()
 
                         Toast.makeText(applicationContext, "Welcome " + jsonUser.getString("name") + "!", Toast.LENGTH_LONG).show()
                         val intent = Intent(this, MainActivity::class.java)

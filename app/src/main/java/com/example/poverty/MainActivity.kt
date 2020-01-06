@@ -3,6 +3,7 @@ package com.example.poverty
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.PorterDuff
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
@@ -13,7 +14,9 @@ import com.google.android.material.tabs.TabLayout
 import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
@@ -35,6 +38,8 @@ import org.json.JSONArray
 import org.json.JSONObject
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.nav_header_main.*
+import kotlinx.android.synthetic.main.nav_header_main.view.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -154,6 +159,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.navView.setNavigationItemSelectedListener(this)
 
         //Initialise variables and UI
+
+        val a1 = findViewById<NavigationView>(R.id.navView)
+        val a2 = a1.getHeaderView(0)
+        var a3 = a2.findViewById<TextView>(R.id.nav_header_textView)
+        val sharedPref : SharedPreferences = getSharedPreferences("PREF", Context.MODE_PRIVATE)
+        val sharedPref2 : SharedPreferences = getSharedPreferences("PREF2", Context.MODE_PRIVATE)
+        a3.setText(sharedPref.getString("PREF",""))
+        a3 = a2.findViewById<TextView>(R.id.textView2)
+        a3.setText(sharedPref2.getString("PREF2",""))
+
+
 
 
 
